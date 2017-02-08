@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Riverforest Lettuce Experiment</title>
+		<meta charset="utf-8">
+ 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="js/graphlight.js"></script>
+		<script src="js/d3.tip.v0.6.3.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+	        <div class="jumbotron">
+	        	<h2>Riverforest Lettuce Experiment</h2>
+	        	<div>
+	        		<a href="ph.html">pH Data</a> | 
+	        		<a href="ec.html">EC Data</a> |
+	        		<a href="index.html">DO Data</a> |
+	        		<a href="wtemp.html">Wtemp Data</a> |
+	        		<a href="atemp.html">Atemp Data</a> |
+	        		<a href="light.html">Light Data</a> |
+	        		<a href="humidity.html">Humidity Data</a> 
+	        	</div>
+	        </div>
+<!-- light Space -->    
+	    	<div class="row" id="lightTitleRow">
+	    		<div class="col-xs-12">
+	    			<p class="rowTitle">Light Data</p>
+	    			<a name="light"></a>
+	    		</div>
+	    	</div>
+
+<!-- Draw Buttons -->
+	        <div class="row" id="lightButtonsRow">
+				<div class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
+					<div class="scaleButton"><input id="light168hr" class="lightButton btn btn-success" type="button" value="Show last 7 Days" onclick="drawlight(168);" /> </div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
+		        	<div class="scaleButton"><input id="light24hr" class="lightButton btn btn-success" type="button" value="Show last 24 Hours" onclick="drawlight(24);" /> </div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
+		        	<div class="scaleButton"><input id="light12hr" class="lightButton btn btn-success" type="button" value="Show last 12 Hours" onclick="drawlight(12);" /> </div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
+		        	<div class="scaleButton"><input id="light6hr" class="lightButton btn btn-success" type="button" value="Show last 6 Hours" onclick="drawlight(6);" /> </div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
+		        	<div class="scaleButton"><input id="light3hr" class="lightButton btn btn-success" type="button" value="Show last 3 Hours" onclick="drawlight(3);" /> </div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
+		        	<div class="scaleButton"><input id="light1hr" class="lightButton btn btn-success" type="button" value="Show last 1 Hour" onclick="drawlight(1);" /> </div>
+		        </div>
+		    </div>
+
+<!-- Draw Stats and Data Table Modals -->
+			<div class="row" id="lightStatsRow">
+<!-- light1 Stats and Table -->
+	<!-- Statistics Box -->
+				<div class="col-xs-12 col-sm-6 col-md-3">
+					<div class="panel panel-default statsPanel" id="light1average">
+						<div class="panel-heading light1PanelHeading">light1 | No aeration</div>
+					</div>
+	<!-- Trigger the modal with a button -->
+					<div class="tableButton">
+						<button type="button" class="btn btn-secondary row1Button" data-toggle="modal" data-target="#light1DataModal">light1 Data Table</button>
+					</div>
+	<!-- Modal -->
+					<div id="light1DataModal" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+	<!-- Modal content-->
+					    <div class="modal-content">
+					      <div class="modal-body">
+					      	<button type="button" class="btn btn-alert" data-dismiss="modal">Close</button>
+					      	<div class="panel panel-default tablePanel" id="light1DataTable">
+								<div class="panel-heading">light1 Raw Data</div>
+								<div class="panel-heading">ID,DateTime,Reading</div>
+							</div>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+
+<!-- Draw Graph -->
+			<div class="row" id="lightGraphRow">
+	        	<div class="col-xs-12" id="lightArea">
+					<script type="text/javascript">
+						//Draw the initial light graph	
+						drawlight(); 
+					</script>
+				</div>
+			</div>
+			
+		</div>
+		<script type="text/javascript">
+			if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) ) {
+				$( window ).resize(function() {
+				  drawlight();
+				});
+			}
+
+		</script>
+	</body>
+</html>

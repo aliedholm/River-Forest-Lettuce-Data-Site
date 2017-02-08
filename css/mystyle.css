@@ -1,0 +1,207 @@
+  .jumbotron {
+    padding-left: 60px;
+  }
+  .panel-body {
+    margin-top: 1px !important;
+    padding-top: 1px !important;
+    margin-bottom: 1px !important;
+    padding-bottom: 1px !important;
+  }
+  .panel-heading {
+    font-weight: bold;
+    margin-top: 2px !important;
+    padding-top: 2px !important;
+    margin-bottom: 2px !important;
+    padding-bottom: 2px !important;
+  }
+  .ph1PanelHeading, .ec1PanelHeading, .do1PanelHeading, .wtemp1PanelHeading, .atemp1PanelHeading, .light1PanelHeading, .humidity1PanelHeading, .co21PanelHeading   {
+    background-color: green !important;
+    opacity: .50;
+  }
+  .ph2PanelHeading, .ec2PanelHeading, .do2PanelHeading, .wtemp2PanelHeading, .atemp2PanelHeading, .light2PanelHeading, .humidity2PanelHeading, .co22PanelHeading   {
+    background-color: indianred !important;
+    opacity: .50;
+  }
+  .ph3PanelHeading, .ec3PanelHeading, .do3PanelHeading, .wtemp3PanelHeading, .atemp3PanelHeading, .light3PanelHeading, .humidity3PanelHeading, .co23PanelHeading   {
+    background-color: lightblue !important;
+    opacity: .50;
+  }
+   .ph4PanelHeading, .ec4PanelHeading, .do4PanelHeading, .wtemp4PanelHeading, .atemp4PanelHeading, .light4PanelHeading, .humidity4PanelHeading, .co24PanelHeading  {
+    background-color: orange !important;
+    opacity: .50;
+  }
+  .ph1DataPanel, .ec1DataPanel, .do1DataPanel, .wtemp1DataPanel, .atemp1DataPanel, .light1DataPanel, .humidity1DataPanel, .co21DataPanel, {
+    text-align: center;
+  }
+  .ph2DataPanel, .ec2DataPanel, .do2DataPanel, .wtemp2DataPanel, .atemp2DataPanel, .light2DataPanel, .humidity2DataPanel, .co22DataPanel, {
+    text-align: center;
+  }
+  .ph3DataPanel, .ec3DataPanel, .do3DataPanel, .wtemp3DataPanel, .atemp3DataPanel, .light3DataPanel, .humidity3DataPanel, .co23DataPanel, {
+    text-align: center;
+  }
+  .ph4DataPanel, .ec4DataPanel, .do4DataPanel, .wtemp4DataPanel, .atemp4DataPanel, .light4DataPanel, .humidity4DataPanel, .co24DataPanel, {
+    text-align: center;
+  }
+  .row1Button {
+    background-color: green !important;
+    opacity: .5;
+  }
+  .row2Button {
+    background-color: indianred !important;
+    opacity: .5;
+  }
+  .row3Button {
+    background-color: lightblue !important;
+    opacity: .5;
+  }
+  .row4Button {
+    background-color: orange !important;
+    opacity: .5;
+  }
+  .dates {
+    font-size: 200%;
+  }
+  .rowTitle { 
+    color: black; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 45px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: center; 
+  }
+  .phline, .ecline, .doline, .wtempline, .atempline, .lightline, .humidityline, .co2line {
+    opacity: .30;
+  }
+  .tableButton {
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .statsPanel {
+    width: 100%;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+  }
+  .btn-secondary {
+    width: 100%;
+  }
+
+/* Definining Tooltip Styles */
+  .d3-tip1 {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: green;
+    border-radius: 2px;
+  }
+
+/* Creates a small triangle extender for the tooltip */
+  .d3-tip1:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 14px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: relative;
+    text-align: center;
+  }
+
+/* Style northward tooltips differently */
+  .d3-tip1.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+  }
+
+  .d3-tip2 {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: indianred;
+    border-radius: 2px;
+  }
+
+  /* Creates a small triangle extender for the tooltip */
+  .d3-tip2:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+  }
+
+  /* Style northward tooltips differently */
+  .d3-tip2.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+  }
+
+  .d3-tip3 {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: lightblue;
+    border-radius: 2px;
+  }
+
+  /* Creates a small triangle extender for the tooltip */
+  .d3-tip3:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+  }
+
+  /* Style northward tooltips differently */
+  .d3-tip3.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+  }
+
+
+  .d3-tip4 {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: orange;
+    border-radius: 2px;
+  }
+
+  /* Creates a small triangle extender for the tooltip */
+  .d3-tip4:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+  }
+
+    /* Style northward tooltips differently */
+    .d3-tip4.n:after {
+      margin: -1px 0 0 0;
+      top: 100%;
+      left: 0;
+    }
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>River Forest Lettuce Experiment</title>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+		
+		<script type="text/javascript">
+			//Width and height
+			var w = 500;
+			var h = 300;
+			var padding = 30;
+	
+			//Get the Data
+			ph1Points = d3.json("/php/data.php", function(error, ph1Data){
+
+			});
+
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			//Create circles
+			svg.selectAll("circle")
+			   .data(ph1Data)
+			   .enter()
+			   .append("circle")
+			   .attr("cx", function(d) {
+			   		return d.[0];
+			   })
+			   .attr("cy", function(d) {
+			   		return d.[1];
+			   })
+			   .attr("r", 4);
+		</script>
+
+	</head>
+	<body>
+		<h2>test</h2>
+	</body>
+</html>
