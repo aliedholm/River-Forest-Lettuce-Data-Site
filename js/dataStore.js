@@ -19,5 +19,9 @@ function dataStore(sensor1, sensor2, sensor3, sensor4){
 	d3.json("php/" + sensor4 + ".php", function(sens4points){
 		sens4 = sens4points;
 		sensors.push(sens4);
+		maxDatesCalc(sensors);
+		minDatesCalc(sensors);
+		maxDate = d3.max(maxDates);
+		minDate = d3.min(minDates);
 	})
 }

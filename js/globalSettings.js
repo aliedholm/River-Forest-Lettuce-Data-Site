@@ -6,6 +6,9 @@ var availableDates = [];
 var availableDatesFull = [];
 var maxDate;
 var minDate;
+var maxDates = [];
+var minDates = [];
+var maxDate0, maxDate1, maxDate2, maxDate3, minDate0, minDate1, minDate2, minDate3;
 
 var selectionTime = -(width/500);
 var selectionSize = 12

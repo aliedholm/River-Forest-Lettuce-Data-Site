@@ -1,24 +1,3 @@
-if(selectionSize) {
-	selectionTime = -(selectionSize);
-}
-//local variables of use for date selections
-
-var maxDate0; 
-var maxDate1;
-var maxDate2;
-var maxDate3;
-var minDate0;
-var minDate1;
-var minDate2;
-var minDate3;
-
-var maxDates = [];
-var minDates = [];
-
-function sensorArray(){
-	sensors = [sens1, sens2, sens3, sens4];
-}
-
 //determine the newest timestamp in dataset
 function maxDatesCalc(sensorSet){
 	for (var i = 0; i < sensorSet.length; i++){
@@ -36,9 +15,3 @@ function minDatesCalc(sensorsSet){
 		});
 	}
 }
-
-maxDatesCalc(sensors);
-minDatesCalc(sensors);
-
-maxDate = d3.max(maxDates);
-minDate = d3.min(minDates);
