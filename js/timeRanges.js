@@ -32,13 +32,15 @@ function uniqueDates(sensorsSet){
 function sortByDate(sensorsSet, dataDates){
 	for (var i = 0; i < sensorsSet.length; i++){
 console.log("start of i");
-		if(i>0){
+		if(i > 0){
 			dataByDate.push([]);
 		}
 		for (var i2 = 0; i2 < dataDates.length; i2++){
 console.log("start of i2");
-			if(i2>0){
-				dataByDate[i][i2].push([]);
+console.log("i2 = " + i2);
+			if(i2 > 0){
+				dataByDate[i].push([]);
+console.log("pushed empty array");
 			}
 			for (var i3 = 0; i3 < sensorsSet[i].length; i3++){
 console.log("start of i3");
