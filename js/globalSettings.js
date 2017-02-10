@@ -9,6 +9,7 @@ var minDate;
 var maxDates = [];
 var minDates = [];
 var maxDate0, maxDate1, maxDate2, maxDate3, minDate0, minDate1, minDate2, minDate3;
+var currentDatePrev;
 var currentDate;
 var currentDateEnd;
 
@@ -32,6 +33,7 @@ var width = windowWidth - margin.left - margin.right;
 var height = 470 - margin.top - margin.bottom;
 
 var canvas;
+var xScale, yScale, xAxis, yAxis;
 var graphPadding = 1;
 
 var xAxisTicks = 12;
@@ -39,7 +41,4 @@ var yAxisTicks = 14;
 
 var circleSize = 3;
 var lineStroke = 2;
-var sens1Color = "green";
-var sens2Color = "indianred";
-var sens3Color = "lightblue";
-var sens4Color = "orange";
+var sensColors = ["green", "indianred", "lightblue", "orange"];

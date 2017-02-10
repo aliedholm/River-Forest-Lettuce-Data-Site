@@ -1,23 +1,23 @@
 //Draw the Axis fcn
 function drawAxis(){
 	//create scale for x axis
-	var xScale = d3.time.scale()
+	xScale = d3.time.scale()
 		.domain([currentDate, currentDateEnd])
-		.range([margin.left, (width)]);
+		.range([margin.left, width]);
 
 	//create scale for y axis
-	var yScale = d3.scale.linear()
+	yScale = d3.scale.linear()
 		.domain([0, 14])
 		.range([(height - margin.bottom), margin.top]);
 
 	//design axis for x
-	var xAxis = d3.svg.axis()
+	xAxis = d3.svg.axis()
 		.ticks(xAxisTicks)
 		.orient("bottom")
 		.scale(xScale);
 
 	//design axis for y
-	var yAxis = d3.svg.axis()
+	yAxis = d3.svg.axis()
 		.ticks(yAxisTicks)
 		.orient("left")
 		.scale(yScale);

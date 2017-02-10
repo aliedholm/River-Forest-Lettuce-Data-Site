@@ -14,12 +14,13 @@
 		<script src="js/globalSettings.js"></script>
 		<script src="js/drawSVG.js"></script>
 		<script src="js/axis-scales.js"></script>
+		<script src="js/drawLine.js"></script>
+		<script src="js/drawDots.js"></script>
 		<script src="js/timeParser.js"></script>
 		<script src="js/timeRanges.js"></script>
 		<script src="js/d3.tip.v0.6.3.js"></script>
 	</head>
 	<body>
-		<script type="text/javascript">dataStore(["ph1", "ph2", "ph3", "ph4"])</script>
 		<div class="container">
 	        <div class="jumbotron">
 	        	<h2>Riverforest Lettuce Experiment</h2>
@@ -43,6 +44,13 @@
 
 <!-- Current Date Display Row -->
 		    <div class="row" id="currentDate" align="center">
+			<input class="btn btn-success" type="button" value="Fetch/Store Data" onclick="dataStore(['ph1', 'ph2', 'ph3', 'ph4']);" />
+			<input class="btn btn-success" type="button" value="Unique Dates" onclick="uniqueDates(sensors);" />		
+			<input class="btn btn-success" type="button" value="Sort By Date" onclick="sortByDate(sensors, availableDates);" />
+			<input class="btn btn-success" type="button" value="Draw SVG" onclick="drawSVG();" />		
+			<input class="btn btn-success" type="button" value="Draw Axis" onclick="drawAxis();" />		
+			<input class="btn btn-success" type="button" value="Draw Line" onclick="drawLine(dataByDate, sensorNames);" />
+			<input class="btn btn-success" type="button" value="Draw Dots" onclick="drawDots(dataByDate, sensorNames);" />
 		    </div>
 
 

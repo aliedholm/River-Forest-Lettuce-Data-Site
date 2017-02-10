@@ -28,6 +28,7 @@ function uniqueDates(sensorsSet){
 	}
 	currentDate = timeParser(d3.max(availableDatesFull));
 	currentDateEnd = d3.time.hour.offset(currentDate, 24);
+	currentDatePrev = d3.time.hour.offset(currentDate, -24);
 }
 
 //sort each sensors data into arrays by date

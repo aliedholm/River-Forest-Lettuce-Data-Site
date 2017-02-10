@@ -11,7 +11,7 @@ var lineGen = d3.svg.line()
 function drawLine(dataObject, sensorTitles){
 	for (var i = 0; i < sensorTitles.length; i++){
 		canvas.append('svg:path')
-			.attr('d', lineGen(dataObject[0][0]))
+			.attr('d', lineGen(dataObject[2][5]))
 			.attr("class", sensorTitles[i])
 			.attr("id", sensorTitles[i])
 			.attr('stroke', sensColors[i])

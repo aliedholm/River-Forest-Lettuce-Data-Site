@@ -2,7 +2,7 @@
 function drawDots(dataObject, sensorTitles){
 	for (var i = 0; i < sensorTitles.length; i++){
 		canvas.selectAll("circle")
-			.data(dataObject[0][0])
+			.data(dataObject[2][5])
 			.enter()
 			.append("circle")
 			.attr("class", (sensorTitles[i]) + "dots")
