@@ -38,10 +38,10 @@ console.log("start of i");
 		for (var i2 = 0; i2 < dataDates.length; i2++){
 console.log("start of i2");
 console.log("i2 = " + i2);
-			if(i2 > 0){
+//			if(i2 > 0){
 				dataByDate[i].push([]);
 console.log("pushed empty array");
-			}
+//			}
 			for (var i3 = 0; i3 < sensorsSet[i].length; i3++){
 console.log("start of i3");
 				if(dataDates[i2] == timeParser(sensorsSet[i][i3].time).toString().substring(0,15)){
