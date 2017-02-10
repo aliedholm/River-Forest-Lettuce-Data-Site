@@ -35,4 +35,4 @@ var lineStroke = 2;
 var sens1Color = "green";
 var sens2Color = "indianred";
 var sens3Color = "lightblue";
-var sens4Colro = "orange";
+var sens4Color = "orange";
