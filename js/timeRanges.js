@@ -31,10 +31,18 @@ function uniqueDates(sensorsSet){
 //sort each sensors data into arrays by date
 function sortByDate(sensorsSet, dataDates){
 	for (var i = 0; i < sensorsSet.length; i++){
-		for (var i2 = 0; i < dataDates.length; i++){
-			for (var i3 = 0; i < sensorsSet[i3].length; i++){
+		if(i>0){
+			dataByDate.push([]);
+		}
+		for (var i2 = 0; i2 < dataDates.length; i2++){
+			if(i2>0){
+				dataByDate[i][i2].push([]);
+			}
+			for (var i3 = 0; i3 < sensorsSet.length; i3++){
 				if(dataDates[i2] == timeParser(sensorsSet[i][i3].time).toString().substring(0,15)){
-debugger;
+console.log(i + "i");
+console.log(i2 + "i2");
+console.log(i3 + "i3");
 					dataByDate[i][i2].push(sensorsSet[i][i3]);
 				}
 			}

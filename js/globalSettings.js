@@ -10,8 +10,15 @@ var maxDates = [];
 var minDates = [];
 var maxDate0, maxDate1, maxDate2, maxDate3, minDate0, minDate1, minDate2, minDate3;
 
+var sensor1name, sensor2name, sensor3name, sensor4name;
+
+var dateArray = [];
+var sensArray = [];
 var dataByDate = [];
 var storeCount = 0;
+
+sensArray.push(dateArray);
+dataByDate.push(sensArray);
 
 var selectionTime = -(width/500);
 var selectionSize = 12;
