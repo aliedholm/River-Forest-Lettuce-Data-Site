@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Test change #3Riverforest Lettuce Experiment</title>
+		<meta charset="utf-8">
+ 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="js/tester.js"></script>
+		<script src="js/d3.tip.v0.6.3.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+	        <div class="jumbotron">
+	        	<h2>Riverforest Lettuce Experiment</h2>
+	        	<div>
+	        		<a href="ph-byday.html">pH Data</a> | 
+	        		<a href="ec-byday.html">EC Data</a> |
+	        		<a href="index.html">DO Data</a> |
+	        		<a href="wtemp-byday.html">Wtemp Data</a> |
+	        		<a href="atemp-byday.html">Atemp Data</a> |
+	        		<a href="light-byday.html">Light Data</a> |
+	        		<a href="humidity-byday.html">Humidity Data</a> 
+	        	</div>
+	        </div>
+<!-- pH Space -->    
+	    	<div class="row" id="phTitleRow">
+	    		<div class="col-xs-12">
+	    			<p class="rowTitle">pH Data</p>
+	    			<a name="ph"></a>
+	    		</div>
+	    	</div>
+
+<!-- Current Date Display Row -->
+		    <div class="row" id="currentDate" align="center">
+		    </div>
+
+<!-- Draw Buttons -->
+	        <div class="row" id="phButtonsRow">
+				<div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 scaleButtons">
+					<div class="scaleButton"><input id="ph168hr" class="phButton btn btn-success" type="button" value="Show last 7 Days" onclick="drawph(168);" /> </div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 scaleButtons">
+		        	<div class="scaleButton"><input id="ph24hr" class="phButton btn btn-success" type="button" value="Show last 24 Hours" onclick="drawph(24);" /> </div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 scaleButtons">
+		        	<div class="scaleButton"><input id="ph12hr" class="phButton btn btn-success" type="button" value="Show last 12 Hours" onclick="drawph(12);" /> </div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 scaleButtons">
+		        	<div class="scaleButton"><input id="ph6hr" class="phButton btn btn-success" type="button" value="Show last 6 Hours" onclick="drawph(6);" /> </div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 scaleButtons">
+		        	<div class="scaleButton"><input id="ph3hr" class="phButton btn btn-success" type="button" value="Show last 3 Hours" onclick="drawph(3);" /> </div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 scaleButtons">
+		        	<div class="scaleButton"><input id="ph1hr" class="phButton btn btn-success" type="button" value="Show last 1 Hour" onclick="drawph(1);" /> </div>
+		        </div>
+		    </div>
+
+<!-- Row for By date Selection -->
+			<div class="row" id="calRow">
+			</div>
+
+<!-- Draw Stats and Data Table Modals -->
+			<div class="row" id="phStatsRow">
+			
+<!-- Ph1 Stats and Table -->
+	<!-- Statistics Box -->
+				<div class="col-xs-12 col-sm-6 col-md-3">
+					<div class="panel panel-default statsPanel" id="ph1average">
+						<div class="panel-heading ph1PanelHeading">pH1 | No aeration</div>
+					</div>
+	<!-- Trigger the modal with a button -->
+					<div class="tableButton">
+						<button type="button" class="btn btn-secondary row1Button" data-toggle="modal" data-target="#ph1DataModal">pH1 Data Table</button>
+					</div>
+	<!-- Modal -->
+					<div id="ph1DataModal" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+	<!-- Modal content-->
+					    <div class="modal-content">
+					      <div class="modal-body">
+					      	<button type="button" class="btn btn-alert" data-dismiss="modal">Close</button>
+					      	<div class="panel panel-default tablePanel" id="ph1DataTable">
+								<div class="panel-heading">pH1 Raw Data</div>
+								<div class="panel-heading">ID,DateTime,Reading</div>
+							</div>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+<!-- Ph2 Stats and Table -->
+	<!-- Statistics Box -->
+				<div class="col-xs-12 col-sm-6 col-md-3">
+					<div class="panel panel-default statsPanel" id="ph2average">
+						<div class="panel-heading ph2PanelHeading">pH2 | Air Diffuser 2</div>
+					</div>
+	<!-- Trigger the modal with a button -->
+					<div class="tableButton">
+						<button type="button" class="btn btn-secondary row2Button" data-toggle="modal" data-target="#ph2DataModal">pH2 Data Table</button>
+					</div>
+	<!-- Modal -->
+					<div id="ph2DataModal" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+	<!-- Modal content-->
+					    <div class="modal-content">
+					      <div class="modal-body">
+					      	<button type="button" class="btn btn-alert" data-dismiss="modal">Close</button>
+					      	<div class="panel panel-default tablePanel" id="ph2DataTable">
+								<div class="panel-heading">pH2 Raw Data</div>
+								<div class="panel-heading">ID,DateTime,Reading</div>
+							</div>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+<!-- Ph3 Stats and Table -->
+	<!-- Statistics Box -->
+				<div class="col-xs-12 col-sm-6 col-md-3">
+					<div class="panel panel-default statsPanel" id="ph3average">
+						<div class="panel-heading ph3PanelHeading">pH3 | Air Diffuser 1 (LTF)</div>
+					</div>
+	<!-- Trigger the modal with a button -->
+					<div class="tableButton">
+						<button type="button" class="btn btn-secondary row3Button" data-toggle="modal" data-target="#ph3DataModal">pH3 Data Table</button>
+					</div>
+	<!-- Modal -->
+					<div id="ph3DataModal" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+	<!-- Modal content-->
+					    <div class="modal-content">
+					      <div class="modal-body">
+					      	<button type="button" class="btn btn-alert" data-dismiss="modal">Close</button>
+					      	<div class="panel panel-default tablePanel" id="ph3DataTable">
+								<div class="panel-heading">pH3 Raw Data</div>
+								<div class="panel-heading">ID,DateTime,Reading</div>
+							</div>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+<!-- Ph4 Stats and Table -->
+	<!-- Statistics Box -->
+				<div class="col-xs-12 col-sm-6 col-md-3">
+					<div class="panel panel-default statsPanel" id="ph4average">
+						<div class="panel-heading ph4PanelHeading">pH4 | Micro-Bubble</div>
+					</div>
+	<!-- Trigger the modal with a button -->
+					<div class="tableButton">
+						<button type="button" class="btn btn-secondary row4Button" data-toggle="modal" data-target="#ph4DataModal">pH4 Data Table</button>
+					</div>
+	<!-- Modal -->
+					<div id="ph4DataModal" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+	<!-- Modal content-->
+					    <div class="modal-content">
+					      <div class="modal-body">
+					      	<button type="button" class="btn btn-alert" data-dismiss="modal">Close</button>
+					      	<div class="panel panel-default tablePanel" id="ph4DataTable">
+								<div class="panel-heading">pH4 Raw Data</div>
+								<div class="panel-heading">ID,DateTime,Reading</div>
+							</div>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+			</div>
+
+<!-- Draw Graph -->
+			<div class="row" id="phGraphRow">
+	        	<div class="col-xs-12" id="phArea">
+					<script type="text/javascript">
+						//Draw the initial pH graph	
+						drawph(); 
+					</script>
+				</div>
+			</div>
+
+		</div>
+		<script type="text/javascript">
+			if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) ) {
+				$( window ).resize(function() {
+				  drawph();
+				});
+			}
+
+		</script>
+	</body>
+</html>
