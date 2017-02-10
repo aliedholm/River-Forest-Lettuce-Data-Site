@@ -10,8 +10,11 @@ var maxDates = [];
 var minDates = [];
 var maxDate0, maxDate1, maxDate2, maxDate3, minDate0, minDate1, minDate2, minDate3;
 
+var dataByDate = [];
+var storeCount = 0;
+
 var selectionTime = -(width/500);
-var selectionSize = 12
+var selectionSize = 12;
 
 var margin = {top: 10, right: 5, bottom: 30, left: 50};
 var windowWidth = document.getElementById("phArea").getBoundingClientRect();
