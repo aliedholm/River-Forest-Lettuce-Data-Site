@@ -26,7 +26,13 @@ function uniqueDates(sensorsSet){
 			}
 		})
 	}
-	currentDate = timeParser(d3.max(availableDatesFull));
+	availableDates.sort(function(a,b){
+		return new Date(b) - new Date(a);
+	});
+	availableDatesFull.sort(function(a,b){
+		return new Date(b) - new Date(a);
+	});
+	currentDate = d3.time.day.floor(timeParser(availableDatesFull[0]));
 	currentDateEnd = d3.time.hour.offset(currentDate, 24);
 	currentDatePrev = d3.time.hour.offset(currentDate, -24);
 }
