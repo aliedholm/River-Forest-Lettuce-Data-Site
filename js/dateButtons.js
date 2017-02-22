@@ -1,14 +1,13 @@
-function dateButtons(dates){
+function dateDropDown(dates){
 	d3.selectAll("div.dateButtons").remove();
-	for(var i = 0; i < dates.length; i++){
-		d3.select("#calRow")
-			.append("div")
-				.attr("class", "col-xs-6 col-sm-6 col-md-4 col-lg-2 dateButtons")
-			.append("input")
-				.attr("class", "daySelButton btn btn-warning")
-				.attr("type", "button")
-				.attr("value", dates[i])
-				.attr("onclick", "drawGraph('" + dates[i] + "');");
+	for(var i = 0; i < dates.length; i ++){
+		d3.select("#dateDrop")
+			.append("a")
+				.attr("class", "dropdown-item")
+				.attr("href", "#")
+				.attr("onclick", "drawGraph('" + dates[i] + "');")
+				.append("p")
+				.text(dates[i]);
 	}
 }
 

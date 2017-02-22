@@ -17,7 +17,7 @@ function minDatesCalc(sensorsSet){
 }
 
 //determine all unique dates in database
-function uniqueDates(sensorsSet){
+function uniqueDates(sensorsSet, callback){
 	for (var i = 0; i < sensorsSet.length; i++){
 		sensorsSet[i].forEach(function(d){
 			if(availableDates.indexOf(timeParser(d.time).toString().substring(0,15)) == -1){
@@ -35,6 +35,7 @@ function uniqueDates(sensorsSet){
 	currentDate = d3.time.day.floor(timeParser(availableDatesFull[0]));
 	currentDateEnd = d3.time.hour.offset(currentDate, 24);
 	currentDatePrev = d3.time.hour.offset(currentDate, -24);
+	callback(sensors, availableDates);
 }
 
 //sort each sensors data into arrays by date

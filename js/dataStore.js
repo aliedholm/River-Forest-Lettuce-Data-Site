@@ -1,5 +1,5 @@
 //main data fetching and storing function
-function dataStore(sensorPack){
+function dataStore(sensorPack, callback){
 	for (var i = 0; i < sensorPack.length; i++){
 		sensorNames.push(sensorPack[i]);
 	}
@@ -24,4 +24,6 @@ function dataStore(sensorPack){
 		sens4 = sens4points;
 		sensors.push(sens4);
 	})
+	callback(sensors, sortByDate);
 }
+

@@ -45,20 +45,31 @@
 
 <!-- Current Date Display Row -->
 		    <div class="row" id="currentDate" align="center">
-			<input class="btn btn-success" type="button" value="Fetch/Store Data" onclick="dataStore(['ph1', 'ph2', 'ph3', 'ph4']);" />
-			<input class="btn btn-success" type="button" value="Unique Dates" onclick="uniqueDates(sensors);" />		
-			<input class="btn btn-success" type="button" value="Sort By Date" onclick="sortByDate(sensors, availableDates);" />
+			<input class="btn btn-success" type="button" value="Fetch/Store Data" onclick="dataStore(['ph1', 'ph2', 'ph3', 'ph4'], uniqueDates);" />
+			<input class="btn btn-success" type="button" value="Unique Dates" onclick="uniqueDates(sensors, sortByDate);" />		
 			<input class="btn btn-success" type="button" value="Draw SVG" onclick="drawSVG();" />		
 			<input class="btn btn-success" type="button" value="Draw Axis" onclick="drawAxis();" />		
 			<input class="btn btn-success" type="button" value="Draw Line" onclick="drawLine(dataByDate, sensorNames);" />
 			<input class="btn btn-success" type="button" value="Draw Dots" onclick="drawDots(dataByDate, sensorNames);" />
-			<input class="btn btn-success" type="button" value="Draw Date Buttons" onclick="dateButtons(availableDates);" />
+			<input class="btn btn-success" type="button" value="Draw Date Dropdown" onclick="dateDropDown(availableDates);" />
 		    </div>
 
 
 <!-- Row for By date Selection -->
 			<div class="row" id="calRow">
 			</div>
+
+<!-- Row for Date Drop Down -->
+			<div class="row" id="dateDropRow">
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dateDropMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<div>Choose Date:</div>
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dateDropMenu" id="dateDrop">
+					</div>
+				</div>
+			</div>			
+
 
 
 <!-- Draw Graph -->
