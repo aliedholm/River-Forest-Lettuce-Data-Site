@@ -3,25 +3,11 @@ var sens1, sens2, sens3, sens4;
 var sensors = [];
 //set of variables that controls most of the behavior of the graph
 var availableDates = [];
-var availableDatesFull = [];
-var maxDate;
-var minDate;
-var maxDates = [];
-var minDates = [];
-var maxDate0, maxDate1, maxDate2, maxDate3, minDate0, minDate1, minDate2, minDate3;
-var currentDatePrev;
-var currentDate;
-var currentDateEnd;
 
 var sensorNames = [];
 
-var dateArray = [];
-var sensArray = [];
-var dataByDate = [];
+var dataByDate = {};
 var storeCount = 0;
-
-sensArray.push(dateArray);
-dataByDate.push(sensArray);
 
 var selectionTime = -(width/500);
 var selectionSize = 12;
