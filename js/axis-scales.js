@@ -2,7 +2,7 @@
 function drawAxis(){
 	//create scale for x axis
 	xScale = d3.time.scale()
-		.domain([timeParser(currentDate), timeParser(d3.time.day.offset(currentDate, 1))])
+		.domain([currentDate, currentDateEnd])
 		.range([margin.left, width]);
 
 	//create scale for y axis
