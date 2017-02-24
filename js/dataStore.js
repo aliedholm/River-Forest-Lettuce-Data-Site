@@ -1,12 +1,16 @@
 //main data fetching and storing function
-function dataStore(sensorPack){
+function dataStore(sensorPack, callback){
 	for (var i = 0; i < sensorPack.length; i++){
+		var count = 0;
 		sensorNames.push(sensorPack[i]);
 		d3.json("php/" + sensorPack[i] + ".php", function(d){
 			sensors.push(d);
+			count++;
+			if (count == (sensorPack.length)){
+				callback(sensors);
+			}
 		})
 	}
-
 }
 
 //function to build data object
@@ -31,4 +35,6 @@ function sortByDate(sensorsSet){
 		}
 	}
 	currentDate = d3.max(availableDates);
+	currentDateEnd = d3.time.hour.offset(currentDate, 24);
+	console.log("sorted");
 }

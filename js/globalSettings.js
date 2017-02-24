@@ -1,10 +1,14 @@
 //set of variables that hold the data sets for resuse
-var sens1, sens2, sens3, sens4;
 var sensors = [];
-var sens = [];
+var pH = ['ph1', 'ph2', 'ph3', 'ph4'];
+var EC = ['ec1', 'ec2', 'ec3', 'ec4'];
+var DO = ['do1', 'do2', 'do3', 'do4'];
+var wtemp = ['wtemp1', 'wtemp2', 'wtemp3', 'wtemp4']
+ 
 //set of variables that controls most of the behavior of the graph
 var availableDates = [];
 var activeDay;
+var currentDate;
 var currentDateEnd;
 var sensorNames = [];
 

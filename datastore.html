@@ -44,8 +44,6 @@
 
 <!-- Current Date Display Row -->
 		    <div class="row" id="currentDate" align="center">
-			<input class="btn btn-success" type="button" value="Fetch/Store Data" onclick="dataStore(['ph1', 'ph2', 'ph3', 'ph4']);" />
-			<input class="btn btn-success" type="button" value="sortByDate" onclick="sortByDate(sensors, availableDates);" />		
 			<input class="btn btn-success" type="button" value="Draw SVG" onclick="drawSVG();" />		
 			<input class="btn btn-success" type="button" value="Draw Axis" onclick="drawAxis();" />		
 			<input class="btn btn-success" type="button" value="Draw Line" onclick="drawLine(dataByDate, sensorNames);" />
@@ -78,5 +76,6 @@
 			</div>
 
 		</div>
+		<script>$(document).ready(dataStore(pH, sortByDate));</script>
 	</body>
 </html>
