@@ -40,6 +40,7 @@ function sortByDate(sensorsSet){
 	}
 	currentDate = d3.max(availableDates);
 	availableDates.sort();
+	currentDateShort = currentDate;
 	currentDate = new Date(currentDate);
 	currentDate.setHours(currentDate.getHours() + currentDate.getTimezoneOffset() / 60);
 	zeroDate(currentDate);

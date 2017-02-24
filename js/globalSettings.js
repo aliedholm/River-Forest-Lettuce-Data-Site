@@ -9,6 +9,7 @@ var wtemp = ['wtemp1', 'wtemp2', 'wtemp3', 'wtemp4']
 var availableDates = [];
 var activeDay;
 var currentDate;
+var currentDateShort;
 var currentDateEnd;
 var sensorNames = [];
 
