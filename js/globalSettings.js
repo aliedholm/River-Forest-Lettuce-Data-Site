@@ -1,9 +1,11 @@
 //set of variables that hold the data sets for resuse
 var sens1, sens2, sens3, sens4;
 var sensors = [];
+var sens = [];
 //set of variables that controls most of the behavior of the graph
 var availableDates = [];
-
+var activeDay;
+var currentDateEnd;
 var sensorNames = [];
 
 var dataByDate = {};
