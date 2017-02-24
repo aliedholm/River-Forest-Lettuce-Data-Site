@@ -37,5 +37,6 @@ function sortByDate(sensorsSet){
 	currentDate = d3.max(availableDates);
 	currentDateEnd = d3.time.hour.offset(currentDate, 24);
 	dateDropDown(availableDates);
+	drawSVG();
 	console.log("sorted");
 }
