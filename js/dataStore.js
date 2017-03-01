@@ -17,7 +17,7 @@ function dataStore(sensorPack, callback){
 function sortByDate(sensorsSet){
 	//loop through each sensor's
 	for (var i = 0; i < sensorsSet.length; i++){
-		dataByDate["sensor" + i] = {};
+		dataByDate[sensorNames[i]] = {};
 		var dateObj = {};
 		//loop through each sensor's data and create empty arrays for it
 		for (var i2 = 0; i2 < sensorsSet[i].length; i2++){
@@ -30,8 +30,8 @@ function sortByDate(sensorsSet){
 			dateObj[currentDate].push(sensorsSet[i][i3]);
 		}	
 		//loop to deterimine full set of dates with available data
-		dataByDate["sensor" + i] = dateObj; 
-		dateRange = Object.keys(dataByDate["sensor" + i]);
+		dataByDate[sensorNames[i]] = dateObj; 
+		dateRange = Object.keys(dataByDate[sensorNames[i]]);
 		for (var i4 = 0; i4 < dateRange.length; i4++){
 			if (availableDates.indexOf(dateRange[i4]) === -1){
 				availableDates.push(dateRange[i4]);
@@ -39,14 +39,9 @@ function sortByDate(sensorsSet){
 		}
 	}
 	currentDate = d3.max(availableDates);
-	availableDates.sort();
-	currentDateShort = currentDate;
-	currentDate = new Date(currentDate);
-	currentDate.setHours(currentDate.getHours() + currentDate.getTimezoneOffset() / 60);
-	zeroDate(currentDate);
-	currentDateEnd = d3.time.hour.offset(currentDate, 24);
+	availableDates.sort().reverse();
+	date24(currentDate);
 	dateDropDown(availableDates);
 	drawSVG();
-	drawAxis();
-	console.log("sorted");
+	graphByDate(currentDateShort);
 }

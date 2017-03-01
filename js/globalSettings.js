@@ -14,6 +14,8 @@ var currentDateEnd;
 var sensorNames = [];
 
 var dataByDate = {};
+var graphSetReading = [];
+var graphSetTime = [];
 var storeCount = 0;
 
 var selectionTime = -(width/500);

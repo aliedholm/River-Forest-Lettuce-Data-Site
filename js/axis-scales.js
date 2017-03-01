@@ -1,5 +1,9 @@
 //Draw the Axis fcn
-function drawAxis(){
+function drawAxis(dateChoice){
+	clearGraph();
+	if (dateChoice){
+		date24(dateChoice);
+	}
 	//create scale for x axis
 	xScale = d3.time.scale()
 		.domain([currentDate, currentDateEnd])
@@ -23,7 +27,7 @@ function drawAxis(){
 		.scale(yScale);
 
 	canvas.append("g")
-		.attr("class", "xAxis")
+		.attr("class", "xAxis axis")
 		.attr("transform", "translate(0, " + (height - margin.bottom) + ")")
 		.call(xAxis)
 		.append("text")
@@ -32,7 +36,7 @@ function drawAxis(){
 		.text("reading time: ");
 
 	canvas.append("g")
-		.attr("class", "yAxis")
+		.attr("class", "yAxis axis")
 		.attr("transform", "translate(" + margin.left + ", 0)")
 		.call(yAxis)
 		.append("text")

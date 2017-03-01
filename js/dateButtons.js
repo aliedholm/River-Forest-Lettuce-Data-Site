@@ -5,9 +5,8 @@ function dateDropDown(dates){
 			.append("a")
 				.attr("class", "dropdown-item")
 				.attr("href", "#")
-				.attr("onclick", "drawGraph('" + dates[i] + "');")
+				.attr("onclick", "graphByDate('" + dates[i] + "');")
 				.append("p")
 				.text(dates[i]);
 	}
 }
-
