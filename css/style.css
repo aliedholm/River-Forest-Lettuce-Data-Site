@@ -12,4 +12,6 @@
 .dropdown {
 	float: right;
 }
-
+#dateRight {
+	margin-left: -4px;
+}

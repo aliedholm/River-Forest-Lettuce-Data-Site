@@ -20,19 +20,20 @@
 	<body>
 		<div class="container">
 	        <div id="pageTitle" class="jumbotron">
-	        	<h2>Riverforest Lettuce Experiment | pH Datai</h2> 
+	        	<h2>Riverforest Lettuce Experiment</h2> 
 				<div class="dropdown">
 					<button class="btn btn-warning dropdown-toggle" type="button" id="sensorDropMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<div>Choose Sensor  <span class="glyphicon glyphicon-chevron-down"></span></div>
 					</button>
+					<br />
 					<div class="dropdown-menu" aira-labelledby="sensorDropMenu" id="sensorDrop">
-	        				<p class="dropdown-text"><a class="dropdown-item" href="ph-byday.html">pH Data</a></p>
-		        			<p class="dropdown-text"><a class="dropdown-item" href="ec-byday.html">EC Data</a></p>
-		        			<p class="dropdown-text"><a class="dropdown-item" href="index.html">DO Data</a></p>
-	        				<p class="dropdown-text"><a class="dropdown-item" href="wtemp-byday.html">Wtemp Data</a></p>
-		        			<p class="dropdown-text"><a class="dropdown-item" href="atemp-byday.html">Atemp Data</a></p>
-		        			<p class="dropdown-text"><a class="dropdown-item" href="light-byday.html">Light Data</a></p>
-	        				<p class="dropdown-text"><a class="dropdown-item" href="humidity-byday.html">Humidity Data</a></p> 
+		        			<p class="dropdown-text"><a class="dropdown-item" href="#" onclick="dataStore(sensorArray[0], 'pH', sortByDate)">pH Data</a></p>
+		        			<p class="dropdown-text"><a class="dropdown-item" href="#" onclick="dataStore(sensorArray[1], 'Electrical Conductivity', sortByDate)">EC Data</a></p>
+		        			<p class="dropdown-text"><a class="dropdown-item" href="#" onclick="dataStore(sensorArray[2], 'Disolved Oxygen', sortByDate)">DO Data</a></p>
+		        			<p class="dropdown-text"><a class="dropdown-item" href="#" onclick="dataStore(sensorArray[3], 'Water Temp', sortByDate)">Water Temp Data</a></p>
+		        			<p class="dropdown-text"><a class="dropdown-item" href="#" onclick="dataStore(sensorArray[4], 'Air Temp', sortByDate)">Air Temp Data</a></p>
+		        			<p class="dropdown-text"><a class="dropdown-item" href="#" onclick="dataStore(sensorArray[5], 'Light', sortByDate)">Light Data</a></p>
+		        			<p class="dropdown-text"><a class="dropdown-item" href="#" onclick="dataStore(sensorArray[6], 'Humidity', sortByDate)">Humidity Data</a></p>
 					</div>
 				</div>
 				<div class="btn-group" role="group" aria-label="dateInc">
@@ -40,8 +41,8 @@
 					<div class="dropdown">
 						<button id="dateDropMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-success dropdown-toggle"  type="button"></button>
 						<div class="dropdown-menu" aria-labelledby="dateDropMenu" id="dateDrop"></div>
-					</div>
 					<button class="btn btn-success" id="dateRight" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button>
+					</div>
 				</div>
 		</div>
 				
@@ -52,6 +53,6 @@
 			</div>
 
 		</div>
-		<script>$(document).ready(dataStore(pH, sortByDate));</script>
+		<script>$(document).ready(dataStore(sensorArray[0], 'pH', sortByDate));</script>
 	</body>
 </html>

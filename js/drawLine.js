@@ -50,15 +50,3 @@ function drawDots(dateChoice){
 		}
 	}
 }					
-
-function graphByDate(dateChoice){
-	if (availableDates.indexOf(dateChoice) == -1){
-		return;
-	}
-	clearGraph();
-	drawSVG(width)
-	dateInc(dateChoice);
-	drawAxis(dateChoice);
-	drawLine(dateChoice);
-	drawDots(dateChoice);
-}

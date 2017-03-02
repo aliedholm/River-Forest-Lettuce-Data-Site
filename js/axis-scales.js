@@ -21,7 +21,7 @@ function drawAxis(dateChoice){
 
 	//create scale for y axis
 	yScale = d3.scale.linear()
-		.domain([0, 14])
+		.domain([0, (maxReading * 1.1)])
 		.range([(height - margin.bottom), margin.top]);
 
 	//design axis for x
@@ -41,8 +41,8 @@ function drawAxis(dateChoice){
 		.attr("transform", "translate(0, " + (height - margin.bottom) + ")")
 		.call(xAxis)
 		.append("text")
-		.attr("x", (width - margin.left))
-		.attr("y", margin.bottom)
+		.attr("x", (width - margin.left - margin.right))
+		.attr("y", margin.bottom - 5)
 		.text("reading time: ");
 
 	canvas.append("g")
@@ -50,7 +50,7 @@ function drawAxis(dateChoice){
 		.attr("transform", "translate(" + margin.left + ", 0)")
 		.call(yAxis)
 		.append("text")
-		.attr("x", 0)
-		.attr("y", margin.top)
-		.text(sensorNames[0]);
+		.attr("x", margin.left)
+		.attr("y", margin.top - 20)
+		.text(currentSensor);
 }

@@ -2,7 +2,7 @@ function dateDropDown(dates){
 	for(var i = 0; i < dates.length; i ++){
 		d3.select("#dateDrop")
 			.append("a")
-				.attr("class", "dropdown-item")
+				.attr("class", "dropdown-item dropdownDate")
 				.attr("href", "#")
 				.attr("onclick", "graphByDate('" + dates[i] + "');")
 				.append("p")

@@ -2,12 +2,18 @@
 var sensors = [];
 var pH = ['ph1', 'ph2', 'ph3', 'ph4'];
 var EC = ['ec1', 'ec2', 'ec3', 'ec4'];
-var DO = ['do1', 'do2', 'do3', 'do4'];
-var wtemp = ['wtemp1', 'wtemp2', 'wtemp3', 'wtemp4']
- 
+var DOx = ['do1', 'do2', 'do3', 'do4'];
+var wtemp = ['wtemp1', 'wtemp2', 'wtemp3', 'wtemp4'];
+var atemp = ['atemp1'];
+var light = ['light1'];
+var humidity = ['humidity1'];
+var sensorArray =[pH, EC, DOx, wtemp, atemp, light, humidity]
+var currentSensor; 
+var count = 0;
 //set of variables that controls most of the behavior of the graph
 var availableDates = [];
-var activeDay;
+var availableReadings = [];
+var maxReading;
 var currentDate;
 var currentDateShort;
 var currentDateEnd;
@@ -18,9 +24,9 @@ var graphSetReading = [];
 var graphSetTime = [];
 var storeCount = 0;
 
-var margin = {top: 10, right: 50, bottom: 30, left: 50};
+var margin = {top: 40, right: 50, bottom: 50, left: 70};
 var width;
-var height = 470 - margin.top - margin.bottom;
+var height = 500 - margin.top - margin.bottom;
 
 var canvas;
 var xScale, yScale, xAxis, yAxis;
@@ -60,3 +66,28 @@ function clearGraph() {
 	d3.selectAll("circle").remove();
 }
 
+function clearDates() {
+	d3.selectAll(".dropdownDate").remove();
+	d3.select("#currentGraphDate").remove();
+	availableDates = [];
+	availableReadings = [];
+	sensorNames = [];
+	sensors = [];
+	dataByDate = [];
+	currentDate = "";
+	currentDateEnd = "";
+	currentDateShort = "";
+	count = 0;
+}
+
+function graphByDate(dateChoice){
+	if (availableDates.indexOf(dateChoice) == -1){
+		return;
+	}
+	clearGraph();
+	drawSVG(width);
+	dateInc(dateChoice);
+	drawAxis(dateChoice);
+	drawLine(dateChoice);
+	drawDots(dateChoice);
+}
