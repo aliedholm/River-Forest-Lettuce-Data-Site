@@ -1,0 +1,15 @@
+.dropdown-item, .dropdown-menu .dropdown-text {
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+	font-family: 'Helvetica Neue', sans-serif;
+	font-size: 12px;
+}
+.row {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.dropdown {
+	float: right;
+}
+

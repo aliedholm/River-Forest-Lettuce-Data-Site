@@ -6,7 +6,7 @@
  	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="stylesheet" href="css/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="http://d3js.org/d3.v3.min.js"></script>
@@ -24,22 +24,33 @@
 	<body>
 		<div class="container">
 	        <div class="jumbotron">
-	        	<h2>Riverforest Lettuce Experiment</h2>
-	        	<div>
-	        		<a href="ph-byday.html">pH Data</a> | 
-	        		<a href="ec-byday.html">EC Data</a> |
-	        		<a href="index.html">DO Data</a> |
-	        		<a href="wtemp-byday.html">Wtemp Data</a> |
-	        		<a href="atemp-byday.html">Atemp Data</a> |
-	        		<a href="light-byday.html">Light Data</a> |
-	        		<a href="humidity-byday.html">Humidity Data</a> 
-	        	</div>
+	        	<h2>Riverforest Lettuce Experiment | pH Data 
+				<div class="dropdown">
+					<button class="btn btn-success dropdown-toggle" type="button" id="dateDropMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<div>Choose Date  <span class="glyphicon glyphicon-chevron-down"></span></div>
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dateDropMenu" id="dateDrop">
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="btn btn-warning dropdown-toggle" type="button" id="sensorDropMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<div>Choose Sensor  <span class="glyphicon glyphicon-chevron-down"></span></div>
+					</button>
+					<div class="dropdown-menu" aira-labelledby="sensorDropMenu" id="sensorDrop">
+	        				<p class="dropdown-text"><a class="dropdown-item" href="ph-byday.html">pH Data</a></p>
+		        			<p class="dropdown-text"><a class="dropdown-item" href="ec-byday.html">EC Data</a></p>
+		        			<p class="dropdown-text"><a class="dropdown-item" href="index.html">DO Data</a></p>
+	        				<p class="dropdown-text"><a class="dropdown-item" href="wtemp-byday.html">Wtemp Data</a></p>
+		        			<p class="dropdown-text"><a class="dropdown-item" href="atemp-byday.html">Atemp Data</a></p>
+		        			<p class="dropdown-text"><a class="dropdown-item" href="light-byday.html">Light Data</a></p>
+	        				<p class="dropdown-text"><a class="dropdown-item" href="humidity-byday.html">Humidity Data</a></p> 
+					</div>
+				</div>
+			</h2>
 	        </div>
 <!-- pH Space -->    
 	    	<div class="row" id="titleRow">
 	    		<div class="col-xs-12">
-	    			<p class="rowTitle">Data</p>
-	    			<a name="ph"></a>
 	    		</div>
 	    	</div>
 
@@ -47,16 +58,6 @@
 		    <div class="row" id="currentDate" align="center">
 		    </div>
 
-<!-- Row for Date Drop Down -->
-			<div class="row" id="dateDropRow">
-				<div class="dropdown">
-					<button class="btn btn-secondary dropdown-toggle" type="button" id="dateDropMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<div>Choose Date:</div>
-					</button>
-					<div class="dropdown-menu" aria-labelledby="dateDropMenu" id="dateDrop">
-					</div>
-				</div>
-			</div>			
 
 
 

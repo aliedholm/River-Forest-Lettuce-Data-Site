@@ -18,12 +18,8 @@ var graphSetReading = [];
 var graphSetTime = [];
 var storeCount = 0;
 
-var selectionTime = -(width/500);
-var selectionSize = 12;
-
-var margin = {top: 10, right: 5, bottom: 30, left: 50};
-//var windowWidth = document.getElementById("area").getBoundingClientRect();
-var windowWidth = $(window).width(); 
+var margin = {top: 10, right: 50, bottom: 30, left: 50};
+var windowWidth = 1200 //$(window).width(); 
 var width = windowWidth - margin.left - margin.right;
 var height = 470 - margin.top - margin.bottom;
 
