@@ -4,7 +4,7 @@ var lineGen = d3.svg.line()
 		return xScale(timeParser(d.time));
 	})
 	.y(function(d) {
-		return yScale(d.reading);
+		return yScale(parseFloat(d.reading));
 	});
 
 //draw line function
@@ -23,17 +23,6 @@ function drawLine(dateChoice){
 					.attr('stroke', sensColors[i])
 					.attr('stroke-width', lineStroke)
 					.attr('fill', "none");
-		}
-	}
-}
-
-function drawDots(dateChoice){
-	if (dateChoice){
-		currentDateShort = dateChoice;
-	}
-	for (var i = 0; i < sensorNames.length; i++){
-		if (dataByDate[sensorNames[i]][currentDateShort]){
-			var graphSet = dataByDate[sensorNames[i]][currentDateShort];
 				var dots = canvas.selectAll("circle.points" + i)
 					.data(graphSet)
 					.enter()
@@ -44,9 +33,10 @@ function drawDots(dateChoice){
 						return xScale(timeParser(d.time));
 					})
 					.attr("cy", function(d){
-						return yScale(d.reading);
+						return yScale(parseFloat(d.reading));
 					})
-					.attr("r", circleSize)
+					.attr("r", circleSize);
 		}
 	}
-}					
+}
+					

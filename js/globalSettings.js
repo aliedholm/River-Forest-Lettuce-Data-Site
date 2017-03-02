@@ -10,6 +10,7 @@ var humidity = ['humidity1'];
 var sensorArray =[pH, EC, DOx, wtemp, atemp, light, humidity]
 var currentSensor; 
 var count = 0;
+var inputLimit = [14, 2000, 30, 45, 60, 60000, 100];
 //set of variables that controls most of the behavior of the graph
 var availableDates = [];
 var availableReadings = [];
@@ -89,5 +90,4 @@ function graphByDate(dateChoice){
 	dateInc(dateChoice);
 	drawAxis(dateChoice);
 	drawLine(dateChoice);
-	drawDots(dateChoice);
 }
