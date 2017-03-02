@@ -27,7 +27,38 @@ function drawLine(dateChoice){
 	}
 }
 
+function drawDots(dateChoice){
+	if (dateChoice){
+		currentDateShort = dateChoice;
+	}
+	for (var i = 0; i < sensorNames.length; i++){
+		if (dataByDate[sensorNames[i]][currentDateShort]){
+			var graphSet = dataByDate[sensorNames[i]][currentDateShort];
+				var dots = canvas.selectAll("circle.points" + i)
+					.data(graphSet)
+					.enter()
+					.append("circle")
+					.attr("class", "points" + i + " points")
+					.style("fill", sensColors[i])
+					.attr("cx", function(d){
+						return xScale(timeParser(d.time));
+					})
+					.attr("cy", function(d){
+						return yScale(d.reading);
+					})
+					.attr("r", circleSize)
+		}
+	}
+}					
+
 function graphByDate(dateChoice){
+	if (availableDates.indexOf(dateChoice) == -1){
+		return;
+	}
+	clearGraph();
+	drawSVG(width)
+	dateInc(dateChoice);
 	drawAxis(dateChoice);
 	drawLine(dateChoice);
+	drawDots(dateChoice);
 }

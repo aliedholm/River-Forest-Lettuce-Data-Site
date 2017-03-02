@@ -1,5 +1,6 @@
 //main data fetching and storing function
 function dataStore(sensorPack, callback){
+	width = $("#pageTitle").width();
 	for (var i = 0; i < sensorPack.length; i++){
 		var count = 0;
 		sensorNames.push(sensorPack[i]);
@@ -42,6 +43,5 @@ function sortByDate(sensorsSet){
 	availableDates.sort().reverse();
 	date24(currentDate);
 	dateDropDown(availableDates);
-	drawSVG();
 	graphByDate(currentDateShort);
 }

@@ -12,26 +12,15 @@
 		<script src="http://d3js.org/d3.v3.min.js"></script>
 		<script src="js/dataStore.js"></script>
 		<script src="js/globalSettings.js"></script>
-		<script src="js/drawSVG.js"></script>
 		<script src="js/axis-scales.js"></script>
-		<script src="js/clearGraph.js"></script>
 		<script src="js/drawLine.js"></script>
-		<script src="js/drawDots.js"></script>
-		<script src="js/timeParser.js"></script>
 		<script src="js/dateButtons.js"></script>
 		<script src="js/d3.tip.v0.6.3.js"></script>
 	</head>
 	<body>
 		<div class="container">
-	        <div class="jumbotron">
-	        	<h2>Riverforest Lettuce Experiment | pH Data 
-				<div class="dropdown">
-					<button class="btn btn-success dropdown-toggle" type="button" id="dateDropMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<div>Choose Date  <span class="glyphicon glyphicon-chevron-down"></span></div>
-					</button>
-					<div class="dropdown-menu" aria-labelledby="dateDropMenu" id="dateDrop">
-					</div>
-				</div>
+	        <div id="pageTitle" class="jumbotron">
+	        	<h2>Riverforest Lettuce Experiment | pH Datai</h2> 
 				<div class="dropdown">
 					<button class="btn btn-warning dropdown-toggle" type="button" id="sensorDropMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<div>Choose Sensor  <span class="glyphicon glyphicon-chevron-down"></span></div>
@@ -46,21 +35,16 @@
 	        				<p class="dropdown-text"><a class="dropdown-item" href="humidity-byday.html">Humidity Data</a></p> 
 					</div>
 				</div>
-			</h2>
-	        </div>
-<!-- pH Space -->    
-	    	<div class="row" id="titleRow">
-	    		<div class="col-xs-12">
-	    		</div>
-	    	</div>
-
-<!-- Current Date Display Row -->
-		    <div class="row" id="currentDate" align="center">
-		    </div>
-
-
-
-
+				<div class="btn-group" role="group" aria-label="dateInc">
+					<button class="btn btn-success" id="dateLeft" type="button"><span class="glyphicon glyphicon-chevron-left"></span></button>
+					<div class="dropdown">
+						<button id="dateDropMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-success dropdown-toggle"  type="button"></button>
+						<div class="dropdown-menu" aria-labelledby="dateDropMenu" id="dateDrop"></div>
+					</div>
+					<button class="btn btn-success" id="dateRight" type="button"><span class="glyphicon glyphicon-chevron-right"></span></button>
+				</div>
+		</div>
+				
 <!-- Draw Graph -->
 			<div class="row" id="graphRow">
 	        	<div class="col-xs-12" id="area">

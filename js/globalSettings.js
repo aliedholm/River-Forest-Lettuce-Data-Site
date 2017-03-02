@@ -19,8 +19,7 @@ var graphSetTime = [];
 var storeCount = 0;
 
 var margin = {top: 10, right: 50, bottom: 30, left: 50};
-var windowWidth = 1200 //$(window).width(); 
-var width = windowWidth - margin.left - margin.right;
+var width;
 var height = 470 - margin.top - margin.bottom;
 
 var canvas;
@@ -30,6 +29,34 @@ var graphPadding = 1;
 var xAxisTicks = 12;
 var yAxisTicks = 14; 
 
-var circleSize = 3;
+var circleSize = 2;
 var lineStroke = 2;
 var sensColors = ["green", "indianred", "lightblue", "orange"];
+
+
+//Parse the Date/Time into plotable data
+var timeParser = d3.time.format("%Y-%m-%d %X").parse;
+
+function zeroDate (date){
+	date.setHours(0);
+	date.setMinutes(0);
+	date.setSeconds(0);
+	}	
+
+function date24 (date){
+	currentDate = new Date(date);
+	currentDate.setHours(currentDate.getHours() + currentDate.getTimezoneOffset() / 60);
+	zeroDate(currentDate);
+	currentDateEnd = d3.time.hour.offset(currentDate, 24);
+	n = availableDates.indexOf(date);
+	currentDateShort =  availableDates[n];
+}
+
+function clearGraph() {
+	d3.selectAll(".axis").remove();
+	d3.select("#lineSpace").remove();
+	d3.select("#graphDate").remove();
+	d3.selectAll(".lines").remove();
+	d3.selectAll("circle").remove();
+}
+

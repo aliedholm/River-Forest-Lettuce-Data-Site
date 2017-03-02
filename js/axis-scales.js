@@ -1,6 +1,16 @@
+//create SVG element in the DOM
+function drawSVG(theWidth){
+	canvas = d3.select('#area')
+		.append("svg")
+		.attr("id", "lineSpace")
+		.attr("width", theWidth)
+		.attr("height", height)
+		.append("g")
+		.attr("transform", "translate(0,0)");
+}
+
 //Draw the Axis fcn
 function drawAxis(dateChoice){
-	clearGraph();
 	if (dateChoice){
 		date24(dateChoice);
 	}

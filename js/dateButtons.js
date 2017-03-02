@@ -1,5 +1,4 @@
 function dateDropDown(dates){
-	d3.selectAll("div.dateButtons").remove();
 	for(var i = 0; i < dates.length; i ++){
 		d3.select("#dateDrop")
 			.append("a")
@@ -11,3 +10,17 @@ function dateDropDown(dates){
 					.text(dates[i]);
 	}
 }
+
+function dateInc (dateChoice){
+	d3.select("#dateDropMenu")
+		.append("div")
+		.attr("id","graphDate")
+		.text(dateChoice + "  ")
+		.append("span")
+		.attr("class", "glyphicon glyphicon-chevron-down");
+	dateIndex = availableDates.indexOf(dateChoice);
+	d3.select("#dateLeft")
+		.attr("onclick", "graphByDate('" + availableDates[dateIndex + 1] + "');");
+	d3.select("#dateRight")
+		.attr("onclick", "graphByDate('" + availableDates[dateIndex - 1] + "');");
+}		
