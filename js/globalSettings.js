@@ -15,6 +15,9 @@ var inputLimit = [9, 1150, 18, 27, 60, 60000, 100];
 var inputFloor = [3, 150, 0, 8, 0, 0, 0];
 //set of variables that controls most of the behavior of the graph
 var availableDates = [];
+var rawStatsObject = {};
+var statList = ['std', 'max', 'min', 'mean', 'mode', 'median'];
+var statsObject = {};
 var maxReading;
 var minReading;
 var currentDate;
@@ -65,6 +68,7 @@ function clearGraph() {
 	d3.selectAll(".axis").remove();
 	d3.select("#lineSpace").remove();
 	d3.select("#graphDate").remove();
+	d3.selectAll(".dropdownStats").remove();
 	d3.selectAll(".lines").remove();
 	d3.selectAll("circle").remove();
 	graphSet = [];

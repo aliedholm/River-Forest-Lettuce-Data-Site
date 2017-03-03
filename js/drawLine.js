@@ -12,11 +12,16 @@ function drawLine(dateChoice){
 	if (dateChoice){
 		currentDateShort = dateChoice;
 	}
-
+	var availableReadings = {};
 	for (var i = 0; i < sensorNames.length; i++){
 		if (dataByDate[sensorNames[i]][currentDateShort]){
 			graphSet = dataByDate[sensorNames[i]][currentDateShort];
 			badReadingsFilter(graphSet);
+			var srs = [];
+			graphSet.forEach(function(d, i2){
+				srs.push(parseFloat(d.reading));
+			})
+			availableReadings[sensorNames[i]] = srs;
 				canvas.append('svg:path')
 					.attr('d', lineGen(graphSet))
 					.attr("class", sensorNames[i] + " lines")
@@ -39,5 +44,8 @@ function drawLine(dateChoice){
 					.attr("r", circleSize);
 		}
 	}
+	//rawStatsObject = availableReadings; 
+	runStats(availableReadings);
+	console.log(statsObject);
 }
 					

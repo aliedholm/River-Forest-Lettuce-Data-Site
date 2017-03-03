@@ -16,10 +16,11 @@
 		<script src="js/stats.js"></script>
 		<script src="js/drawLine.js"></script>
 		<script src="js/dateButtons.js"></script>
+		<script src="js/math.min.js"></script>
 		<script src="js/d3.tip.v0.6.3.js"></script>
 	</head>
 	<body>
-		<div class="container">
+	<div class="container">
 
 <!-- Title Bar & Buttons for navigating sensors and dates -->
 	        <div id="pageTitle" class="jumbotron">
@@ -41,14 +42,45 @@
 					</div>
 				</div>
 		</div>
-<!-- Draw Graph -->
-			<div class="row" id="graphRow">
-	        	<div class="col-xs-12" id="area">
+<!-- Space for stats boxes to be written -->
+			<div class"row" id="statsRow">
+				<div class="col-xs-3">
+					<div class="dropdown">
+						<button align="center" class="btn dropdown-toggle" type="button" id="sens0Stats" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<div>Sensor 1 Stats  <span class="glyphicon glyphicon-chevron-down"></span></div>
+						</button>
+						<div class="dropdown-menu" aria-labelledby="sensor0Stats" id="sensor0Stats"></div>
+					</div>
 				</div>
-			</div>
-
-		</div>
+				<div class="col-xs-3">
+					<div class="dropdown">
+						<button align="center" class="btn dropdown-toggle" type="button" id="sens1Stats" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<div>Sensor 2 Stats  <span class="glyphicon glyphicon-chevron-down"></span></div>
+						</button>
+						<div class="dropdown-menu" aria-labelledby="sensor1Stats" id="sensor1Stats"></div>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="dropdown">
+						<button align="center" class="btn dropdown-toggle" type="button" id="sens2Stats" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<div>Sensor 3 Stats  <span class="glyphicon glyphicon-chevron-down"></span></div>
+						</button>
+						<div class="dropdown-menu" aria-labelledby="sensor2Stats" id="sensor2Stats"></div>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="dropdown">
+						<button align="center" class="btn dropdown-toggle" type="button" id="sens3Stats" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<div>Sensor 4 Stats  <span class="glyphicon glyphicon-chevron-down"></span></div>
+						</button>
+						<div class="dropdown-menu" aria-labelledby="sensor3Stats" id="sensor3Stats"></div>
+					</div>
+				</div>
+			</div>		
+<!-- Draw Graph -->
+			<div class="row" id="graphRow"><div class="col-xs-12" id="area"></div></div>
 <!-- Page load script to invoke inital grpahing -->
+	</div>
 		<script>
 			$(document).ready(dataStore(pH, 'pH', sortByDate));
 		</script>

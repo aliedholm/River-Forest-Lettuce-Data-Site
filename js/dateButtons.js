@@ -37,3 +37,19 @@ function sensorButtons (d){
 					.text(fullNames[i]);
 	}
 } 
+
+function writeStats(d){
+	keys = Object.keys(d);
+	for (var i = 0; i < keys.length; i++){
+		keys2 = Object.keys(d[keys[i]]);
+		for (var i2 = 0; i2 < keys2.length; i2++){
+			d3.select("#sensor" + i + "Stats")
+				.append("a")
+					.attr("class", "dropdown-item dropdownStats")
+					.attr("href", "#")
+					.append("p")
+						.attr("class", "dropdownText statsText")
+						.text((keys2[i2]) + " : " + (d[keys[i]][keys2[i2]]));
+		}
+	}
+}
