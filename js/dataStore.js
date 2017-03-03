@@ -3,8 +3,8 @@ function dataStore(sensorPack, name, callback){
 	clearGraph();
 	clearDates();
 	currentSensor = name;
+	currentSensorShort = sensorPack[0];
 	width = $("#pageTitle").width();
-//	for (var i = 0; i < sensorPack.length; i++){
 	sensorPack.forEach(function(e, index){
 		sensorNames.push(e);
 		d3.json("php/" + e + ".php", function(d){
@@ -32,7 +32,6 @@ function sortByDate(sensorsSet){
 		for (var i3 = 0; i3 < sensorsSet[i].length; i3++){
 			currentDate = sensorsSet[i][i3].time.toString().substring(0,10);
 			dateObj[currentDate].push(sensorsSet[i][i3]);
-			availableReadings.push(parseFloat(sensorsSet[i][i3].reading));
 		}	
 		//loop to deterimine full set of dates with available data
 		dataByDate[sensorNames[i]] = dateObj; 
@@ -44,8 +43,6 @@ function sortByDate(sensorsSet){
 		}
 	}
 	currentDate = d3.max(availableDates);
-	maxReading = d3.max(availableReadings);
-	if (currentSensor == "Electrical Conductivity"){maxReading = 10000;}
 	availableDates.sort().reverse();
 	date24(currentDate);
 	dateDropDown(availableDates);

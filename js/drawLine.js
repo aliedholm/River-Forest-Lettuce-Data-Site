@@ -15,7 +15,8 @@ function drawLine(dateChoice){
 
 	for (var i = 0; i < sensorNames.length; i++){
 		if (dataByDate[sensorNames[i]][currentDateShort]){
-			var graphSet = dataByDate[sensorNames[i]][currentDateShort];
+			graphSet = dataByDate[sensorNames[i]][currentDateShort];
+			badReadingsFilter(graphSet);
 				canvas.append('svg:path')
 					.attr('d', lineGen(graphSet))
 					.attr("class", sensorNames[i] + " lines")

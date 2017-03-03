@@ -14,6 +14,7 @@ function drawAxis(dateChoice){
 	if (dateChoice){
 		date24(dateChoice);
 	}
+	inputLimitFilter(sensorArray);
 	//create scale for x axis
 	xScale = d3.time.scale()
 		.domain([currentDate, currentDateEnd])
@@ -21,7 +22,7 @@ function drawAxis(dateChoice){
 
 	//create scale for y axis
 	yScale = d3.scale.linear()
-		.domain([0, (maxReading * 1.1)])
+		.domain([(minReading * .95), (maxReading * 1.05)])
 		.range([(height - margin.bottom), margin.top]);
 
 	//design axis for x

@@ -8,13 +8,15 @@ var atemp = ['atemp1'];
 var light = ['light1'];
 var humidity = ['humidity1'];
 var sensorArray =[pH, EC, DOx, wtemp, atemp, light, humidity]
+var fullNames = ['pH', 'Electrical Conductivity', 'Disolved Oxygen', 'Water Temp', 'Air Temp', 'Light', 'Humidity'];
 var currentSensor; 
 var count = 0;
-var inputLimit = [14, 2000, 30, 45, 60, 60000, 100];
+var inputLimit = [9, 1150, 18, 27, 60, 60000, 100];
+var inputFloor = [3, 150, 0, 8, 0, 0, 0];
 //set of variables that controls most of the behavior of the graph
 var availableDates = [];
-var availableReadings = [];
 var maxReading;
+var minReading;
 var currentDate;
 var currentDateShort;
 var currentDateEnd;
@@ -23,7 +25,7 @@ var sensorNames = [];
 var dataByDate = {};
 var graphSetReading = [];
 var graphSetTime = [];
-var storeCount = 0;
+var graphSet = [];
 
 var margin = {top: 40, right: 50, bottom: 50, left: 70};
 var width;
@@ -65,6 +67,8 @@ function clearGraph() {
 	d3.select("#graphDate").remove();
 	d3.selectAll(".lines").remove();
 	d3.selectAll("circle").remove();
+	graphSet = [];
+	sensorIndex = ''
 }
 
 function clearDates() {
