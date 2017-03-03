@@ -46,6 +46,5 @@ function drawLine(dateChoice){
 	}
 	//rawStatsObject = availableReadings; 
 	runStats(availableReadings);
-	console.log(statsObject);
 }
 					

@@ -39,9 +39,10 @@ function sensorButtons (d){
 } 
 
 function writeStats(d){
-	keys = Object.keys(d);
+	var keys = Object.keys(d);
 	for (var i = 0; i < keys.length; i++){
-		keys2 = Object.keys(d[keys[i]]);
+		var keys2 = Object.keys(d[keys[i]]);
+		if (d[keys[i]].mean > 0){
 		d3.select("#statsRow")
 			.append("div")
 				.attr("class", "col-xs-3 statsBox")
@@ -49,6 +50,7 @@ function writeStats(d){
 					.attr("class", "dropdown dropdownStats")
 					.attr("id", "sensor" + i + "Stats")
 					.append("button")
+						.style("background-color", sensColors[i])
 						.attr("class", "btn dropdown-toggle")
 						.attr("type", "button")
 						.attr("id", "sens" + i + "Stats")
@@ -74,6 +76,7 @@ function writeStats(d){
 					.append("p")
 						.attr("class", "dropdownText statsText")
 						.text((keys2[i2]) + " : " + (d[keys[i]][keys2[i2]]));
+		}
 		}
 	}
 }
