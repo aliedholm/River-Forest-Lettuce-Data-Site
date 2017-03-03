@@ -42,8 +42,32 @@ function writeStats(d){
 	keys = Object.keys(d);
 	for (var i = 0; i < keys.length; i++){
 		keys2 = Object.keys(d[keys[i]]);
+		d3.select("#statsRow")
+			.append("div")
+				.attr("class", "col-xs-3 statsBox")
+				.append("div")
+					.attr("class", "dropdown dropdownStats")
+					.attr("id", "sensor" + i + "Stats")
+					.append("button")
+						.attr("class", "btn dropdown-toggle")
+						.attr("type", "button")
+						.attr("id", "sens" + i + "Stats")
+						.attr("data-toggle", "dropdown")
+						.attr("aria-haspopup", "true")
+						.attr("aria-expanded", "false")
+						.append("div")
+							.text("Sensor " + (i+1) + " Stats  ")
+							.append("span")
+								.attr("class", "glyphicon glyphicon-chevron-down")
+														
+		d3.select("#sensor" + i + "Stats")
+			.append("div")
+				.attr("class", "dropdown-menu")
+				.attr("aria-labelledby", "sensor" + i +"Stats")
+				.attr("id", "sensors" + i +"Stats")
+				
 		for (var i2 = 0; i2 < keys2.length; i2++){
-			d3.select("#sensor" + i + "Stats")
+			d3.select("#sensors" + i + "Stats")
 				.append("a")
 					.attr("class", "dropdown-item dropdownStats")
 					.attr("href", "#")

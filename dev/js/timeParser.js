@@ -1,1 +1,0 @@
-var timeParser = d3.time.format("%Y-%m-%d %X").parse;

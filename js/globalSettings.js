@@ -68,7 +68,7 @@ function clearGraph() {
 	d3.selectAll(".axis").remove();
 	d3.select("#lineSpace").remove();
 	d3.select("#graphDate").remove();
-	d3.selectAll(".dropdownStats").remove();
+	d3.selectAll(".statsBox").remove();
 	d3.selectAll(".lines").remove();
 	d3.selectAll("circle").remove();
 	graphSet = [];
