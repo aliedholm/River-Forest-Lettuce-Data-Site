@@ -73,6 +73,7 @@ function clearGraph() {
 
 function clearDates() {
 	d3.selectAll(".dropdownDate").remove();
+	d3.selectAll(".dropdownSensor").remove();
 	d3.select("#currentGraphDate").remove();
 	availableDates = [];
 	availableReadings = [];

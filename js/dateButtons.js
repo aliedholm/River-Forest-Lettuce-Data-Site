@@ -1,4 +1,4 @@
-function dateDropDown(dates){
+function dateDropDown (dates){
 	for(var i = 0; i < dates.length; i ++){
 		d3.select("#dateDrop")
 			.append("a")
@@ -24,3 +24,16 @@ function dateInc (dateChoice){
 	d3.select("#dateRight")
 		.attr("onclick", "graphByDate('" + availableDates[dateIndex - 1] + "');");
 }		
+
+function sensorButtons (d){
+	for(var i = 0; i < d.length; i++){
+		d3.select("#sensorDrop")
+			.append("a")
+				.attr("class", "dropdown-item dropdownSensor")
+				.attr("href", "#")
+				.attr("onclick", "dataStore(sensorArray[" + i + "], fullNames[" + i + "], sortByDate)")
+				.append("p")
+					.attr("class", "dropdown-text")
+					.text(fullNames[i]);
+	}
+} 

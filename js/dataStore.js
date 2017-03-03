@@ -46,6 +46,7 @@ function sortByDate(sensorsSet){
 	availableDates.sort().reverse();
 	date24(currentDate);
 	dateDropDown(availableDates);
+	sensorButtons(sensorArray);
 	d3.select("#sensorDropMenu")
 		.append("div")
 		.attr("id", "currentGraphDate")
