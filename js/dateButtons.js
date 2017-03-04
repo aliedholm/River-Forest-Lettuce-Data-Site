@@ -51,7 +51,7 @@ function writeStats(d){
 					.attr("id", "sensor" + i + "Stats")
 					.append("button")
 						.style("background-color", sensColors[i])
-						.attr("class", "btn dropdown-toggle")
+						.attr("class", "btn dropdown-toggle statsButton")
 						.attr("type", "button")
 						.attr("id", "sens" + i + "Stats")
 						.attr("data-toggle", "dropdown")

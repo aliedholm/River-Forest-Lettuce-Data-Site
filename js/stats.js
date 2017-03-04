@@ -11,6 +11,7 @@ function runStats (d){
 		var vari = math.var(d[keys[i]]);
 		var mode = math.mode(d[keys[i]]);
 		var med = math.median(d[keys[i]]);
+		var setLength = d[keys[i]].length;
 		statsDump[keys[i]]['std'] = std;
 		statsDump[keys[i]]['max'] = max;
 		statsDump[keys[i]]['min'] = min;
@@ -18,6 +19,7 @@ function runStats (d){
 		statsDump[keys[i]]['vari'] = vari;
 		statsDump[keys[i]]['mode'] = mode;
 		statsDump[keys[i]]['median'] = med;
+		if (setLength > 0){statsDump[keys[i]]['# of readings'] = setLength}; 
 		}
 	}
 	statsObject = statsDump;
