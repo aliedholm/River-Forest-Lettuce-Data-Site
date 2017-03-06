@@ -73,7 +73,8 @@ function writeStats(d){
 				.append("a")
 					.attr("class", "dropdown-item dropdownStats")
 					.attr("href", "#")
-					.append("p")
+					.append("ul")
+					.append("li")
 						.attr("class", "dropdownText statsText")
 						.text((keys2[i2]) + " : " + (d[keys[i]][keys2[i2]]));
 		}
